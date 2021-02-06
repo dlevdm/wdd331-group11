@@ -1,23 +1,15 @@
 @import 'partials/reset';
 @import 'partials/prefix-mixins';
 @import 'partials/layout'; // responsive grid and media queries
+@import 'partials/colors';
+
+@import 'partials/typography';
 
 // color palette - these colors will be the color swatches of the Colors section
 
-$color-1: #5f8ee4; // Cornflower Blue - Action color
-$color-2: #19191a; // Dark Blue
-$color-3: #e4655f; // Red
-$color-4: #e6e6e6; // light grey
-$color-5: #ffffff; // white
-
-// additional colors
-
-$success: #6fce72; // green
-$alert: $color-3; // red
-
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Lato:wght@400&family=Roboto+Slab&family=Satisfy&display=swap');
 // fonts
-$primary-font: 'Merriweather', serif;
-$secondary-font: 'Open Sans', sans-serif;
+
 
 /* -------------------------------- 
 
@@ -64,11 +56,14 @@ header {
     width: 180px;
   }
 }
-
+.cd-primary-nav{
+  
+  font-family: $tertiary-font;
+}
 .cd-main-nav {
   /* main navigation background color - full screen on small devices */
   background: $color-2;
-
+  font-family: $tertiary-font;
   li a {
     color: $color-5;
     border-color: lighten($color-2, 5%);
