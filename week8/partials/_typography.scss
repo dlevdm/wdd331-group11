@@ -1,0 +1,146 @@
+$primary-font: 'Roboto Slab', serif;
+$secondary-font: 'Exo 2', sans-serif;
+$tertiary-font: 'Lato', sans-serif;
+$fourth-font: 'Satisfy', cursive;
+
+/* -------------------------------- 
+
+xTypography 
+
+-------------------------------- */
+
+h1,
+h2 {
+  font-family: $secondary-font;
+  color: $color-4;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+
+  @include MQ(S) {
+    font-size: 3.2rem;
+  }
+
+  @include MQ(M) {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+
+  @include MQ(S) {
+    font-size: 1.8rem;
+    margin: 1em 0 1.4em;
+  }
+}
+
+h3 {
+    font-family: $fourth-font;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 1em 0;
+  
+    @include MQ(S) {
+      font-size: 3rem;
+      margin: 1em 0 1.4em;
+    }
+  }
+
+section > h2::before {
+  /* number before each section title */
+  color: darken($color-4, 15%);
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: lighten($color-4, 25%);
+  margin-bottom: 2em;
+
+  a {
+    color: $color-1;
+    text-decoration: underline;
+  }
+
+  @include MQ(S) {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+.cd-logo {
+    font-family: $primary-font;
+    color: $color-6;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+
+  
+    @include MQ(S) {
+      font-size: 2rem;
+    }
+  
+    @include MQ(M) {
+      font-size: 3rem;
+    }
+}
+
+
+/* -------------------------------- 
+
+xBasic style
+
+-------------------------------- */
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: $primary-font;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+input, textarea, select {
+	font-family: $primary-font;
+	font-size: 1.6rem;
+}
+
+/* -------------------------------- 
+
+xPage title 
+
+-------------------------------- */
+
+main > h1 {
+  color: $color-2;
+
+  @include MQ(L) {
+    /* title goes into the header on big devices */
+    color: $color-5;
+  }
+}
