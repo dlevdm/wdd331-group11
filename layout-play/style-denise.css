@@ -1,0 +1,49 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+  }
+
+/* specific divs */
+.page-wrapper {   
+	margin: 0 auto; 
+	max-width: 90%;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+.requirements {
+	max-width: 90%;
+	margin-top: 3em;
+	margin-bottom: 1em;
+	background-color: #EFEFEF;
+}
+
+.preamble {
+	background-color: #EFEFEF;	
+}
+
+footer {
+	background-color: #260235;
+}
+
+@media only screen and (min-width: 60em) {
+.page-wrapper {   
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.intro {
+	grid-column: 1 / 4;
+}
+
+.main {
+	grid-column: 1 / 3;
+}
+
+.requirements, footer {
+	position: absolute;
+}	
+
+.preamble {
+	padding: 2em;
+}
+}
