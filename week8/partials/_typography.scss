@@ -42,16 +42,26 @@ h2 {
 }
 
 h3 {
-    font-family: $fourth-font;
+    font-family: $tertiary-font;
     font-size: 4rem;
     line-height: 1.2;
     margin: 1em 0;
+    text-transform: uppercase;
   
     @include MQ(S) {
       font-size: 3rem;
       margin: 1em 0 1.4em;
     }
   }
+
+.preamble h3 {
+   text-align: center;
+} 
+
+aside h3 {
+    font-family: $fourth-font;
+    text-transform: none;
+}
 
 section > h2::before {
   /* number before each section title */
@@ -73,23 +83,6 @@ p {
     font-size: 1.6rem;
     line-height: 1.6;
   }
-}
-
-.cd-logo {
-    font-family: $primary-font;
-    color: $color-6;
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.2;
-
-  
-    @include MQ(S) {
-      font-size: 2rem;
-    }
-  
-    @include MQ(M) {
-      font-size: 3rem;
-    }
 }
 
 

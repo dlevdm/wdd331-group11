@@ -11,3 +11,26 @@ $color-6: #FFFFFF; // white
 $success: #6fce72; // green
 $alert: $color-3; // red
 
+header {
+	background-color: $color-1; 
+}
+
+header h1, header h2 {
+    color: $color-6;   
+}
+
+.summary p:nth-child(2) {
+    color: $color-6;
+
+    a {
+        color: $color-6;
+      }
+  }
+
+.requirements, .preamble {
+    background-color: $color-5;
+}
+
+footer {
+	background-color: $color-1;
+}
