@@ -1,0 +1,128 @@
+/* -------------------------------- 
+Layout
+-------------------------------- */
+// breakpoints
+$S:  20em;   
+$M:  30em;     
+$L:  60em;
+$XL: 90em;
+
+// other variables
+$mainpadding: 1em 4em;
+$smlpadding: 1em;
+
+// media queries
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; } 
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; } 
+  }
+  @else if $canvas == XL {
+    @media only screen and (min-width: $XL) { @content; } 
+   }
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+  }
+
+.page-wrapper {   
+	margin: 0 auto; 
+	max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+	grid-gap: 1em;
+
+  @include MQ(L) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+header {
+  height: 30em;
+  width: 100%;
+  padding: 10em 2em 0;
+  @include MQ(L) {
+    padding: 20em 4em 0;
+    }
+}
+
+.summary p:nth-child(2) {
+  position: absolute;
+  top: 20em;
+  padding: 0 3em;
+  margin-bottom: 1em;
+
+  @include MQ(L) {
+    top: 24em;
+    right: 10%;
+    text-align: right;
+  }
+}
+
+.summary p:nth-child(1) {
+  text-align: center;
+  padding-top: 1em;
+  font-style: italic;
+}
+
+.intro {
+  @include MQ(L) {
+	  grid-column: 1 / 3;
+  }
+}
+
+.main {
+  @include MQ(L) {
+	grid-column: 1 / 2;
+  }
+}
+
+.main div, .intro div {
+  padding: $smlpadding;
+  @include MQ(L) {
+    padding: $mainpadding;
+    }
+}
+
+.requirements {
+	max-width: 100%;
+  @include MQ(L) {
+    position: absolute;
+    margin-top: 10em;
+  }
+  @include MQ(XL) {
+    margin-top: 30em;
+  }
+}
+
+footer {
+  padding: $mainpadding;
+  text-align: center;
+  position: absolute;
+  display:block;
+  margin-top: 85em;
+  width: 100%;
+
+  @include MQ(L) {
+    margin-top: 52em;
+  }
+
+  @include MQ(XL) {
+    margin-top: 60em;
+  }
+}
+
+.sidebar {
+  @include clearfix();
+}
+
+// other
+img {
+	max-width: 100%;
+}
