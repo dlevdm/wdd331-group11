@@ -4,3 +4,47 @@ xNavigation
 
 -------------------------------- */
 
+.wrapper {
+  text-align: center;
+  border: 1px solid;
+  padding: 1em;
+  display: grid;
+  gap: 1em;
+  grid-template-rows: auto auto auto;
+  align-items: stretch;
+  height: 100%;
+}
+
+.design-selection > nav > ul {
+  display: grid;
+  gap: 1em;
+  grid-template-rows: repeat(8, minmax(5vh, 1fr));
+  height: 100%;
+}
+
+.design-selection > nav > ul > li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.design-selection > nav > ul > li::before {
+  content: "";
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  background-image: url(https://picsum.photos/70);
+  margin-bottom: 1em;
+}
+
+.design-selection > nav > ul > li > a:nth-child(1) {
+  flex: 1 0 100%;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+.design-selection > nav > ul > li > a:nth-child(2) {
+  margin-left: 0.5em;
+}
