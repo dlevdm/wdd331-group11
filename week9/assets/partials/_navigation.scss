@@ -1,0 +1,43 @@
+/* -------------------------------- 
+Navigation 
+-------------------------------- */
+
+.wrapper {
+  text-align: center;
+  border-left: 1px solid;
+  padding: 1em;
+}
+
+.design-selection ul {
+  display: grid;
+  gap: 1em;
+  grid-template-rows: repeat(8, minmax(5vh, 1fr));
+}
+
+.design-selection ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.design-selection li::before {
+  content: "";
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-image: url(https://picsum.photos/70); //placeholder
+  margin-bottom: 1em;
+}
+
+.design-selection li a:nth-child(1) {
+  flex: 1 0 100%;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+.design-selection li a:nth-child(2) {
+  margin-left: 0.5em;
+}

@@ -1,0 +1,47 @@
+/* -------------------------------- 
+Colors
+-------------------------------- */
+$color-1: #260235; // violet
+$color-2: #0D2867; // royal blue
+$color-3: #D40027; // Fire engine Red
+$color-4: #000000; // black
+$color-5: #EFEFEF; // grey
+$color-6: #FFFFFF; // white
+
+
+// additional colors
+
+$success: #6fce72; // green
+$alert: $color-3; // red
+
+header {
+	background-color: $color-1; 
+}
+
+header h1, header h2 {
+    color: $color-6;   
+}
+
+.summary p:nth-child(2) {
+    color: $color-6;
+
+    a {
+        color: $color-6;
+      }
+}
+
+.requirements, .preamble {
+    background-color: $color-5;
+}
+
+footer {
+	background-color: $color-1;
+
+    a {
+        color: $color-6;
+    }
+}
+
+.wrapper a {
+    color: $color-2;
+}
