@@ -1,6 +1,18 @@
 /* -------------------------------- 
 Navigation 
 -------------------------------- */
+@mixin planets($width: 5em, $height: 5em) {
+  content: "";
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+}
 
 .wrapper {
   text-align: center;
@@ -10,7 +22,6 @@ Navigation
 
 .design-selection ul {
   display: grid;
-  gap: 1em;
   grid-template-rows: repeat(8, minmax(5vh, 1fr));
 }
 
@@ -23,13 +34,52 @@ Navigation
   font-size: 0.7em;
 }
 
-.design-selection li::before {
-  content: "";
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-image: url(https://picsum.photos/70); //placeholder
-  margin-bottom: 1em;
+.design-selection li:nth-child(1)::before {
+  @include planets(3em, 3em);
+  background-image: url(https://www.iau.org/static/archives/images/screen/iau1407a.jpg);
+}
+
+.design-selection li:nth-child(2)::before {
+  @include planets(4em, 4em);
+  background-image: url(https://solarviews.com/raw/venus/venmap2.gif);
+}
+
+.design-selection li:nth-child(3)::before {
+  @include planets(4.5em, 4.5em);
+  background-image: url(https://m.media-amazon.com/images/I/817ST7RkzLL._AC_SX355_.jpg);
+}
+
+.design-selection li:nth-child(4)::before {
+  @include planets(3em, 3em);
+  background-image: url(https://i.redd.it/cx34ojcht4301.jpg);
+}
+
+.design-selection li:nth-child(5)::before {
+  @include planets(8em, 8em);
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg);
+}
+
+.design-selection li:nth-child(6)::before {
+  @include planets(7em, 7em);
+  background-image: url(https://www.solarsystemscope.com/textures/download/8k_saturn.jpg);
+}
+.design-selection li:nth-child(7)::before {
+  @include planets(4em, 4em);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1912b050-3675-4394-a3d1-d0b4cb43ae0a/dc3ui75-a7f251a1-1479-4356-a42d-b90b7b6e4042.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMTkxMmIwNTAtMzY3NS00Mzk0LWEzZDEtZDBiNGNiNDNhZTBhXC9kYzN1aTc1LWE3ZjI1MWExLTE0NzktNDM1Ni1hNDJkLWI5MGI3YjZlNDA0Mi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.w1VBLCjSLLkwDwWey9t1urMbU3OnIC7ZnAfjyKDnHMA);
+}
+.design-selection li:nth-child(8)::before {
+  @include planets(3.5em, 3.5em);
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
+}
+
+.design-selection li:hover::before {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    background-position: 100%;
+  }
 }
 
 .design-selection li a:nth-child(1) {
