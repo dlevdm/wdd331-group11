@@ -66,7 +66,7 @@ footer {
 }
 
 .wrapper {
-    border-left: 2px dotted $color-2;
+    box-shadow: -10px 0px 10px -3px rgba(210,206,206,0.86);
 
     a {
         color: $color-2;
