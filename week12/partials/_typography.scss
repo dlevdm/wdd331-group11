@@ -1,0 +1,182 @@
+/* -------------------------------- 
+Typography 
+-------------------------------- */
+$primary-font: 'Roboto Slab',
+serif;
+$secondary-font: 'Exo 2',
+sans-serif;
+$tertiary-font: 'Lato',
+sans-serif;
+$fourth-font: 'Satisfy',
+cursive;
+
+// headings
+h1,
+h2 {
+  font-family: $secondary-font;
+  color: $color-4;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+
+  @include MQ(S) {
+    font-size: 2em;
+  }
+
+  @include MQ(M) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+  font-size: 1em;
+
+  @include MQ(S) {
+    font-size: 1.2em;
+    margin: 1em 0 1.4em;
+  }
+}
+
+h3 {
+  font-family: $tertiary-font;
+  font-size: 4em;
+  line-height: 1.2;
+  margin: 1em 0;
+  text-transform: uppercase;
+
+  @include MQ(S) {
+    font-size: 3em;
+    margin: 1em 0 1.4em;
+  }
+}
+
+.preamble {
+  text-align: center;
+
+  h3 {
+    text-align: center;
+    font-size: 1.4em;
+
+    @include MQ(L) {
+      font-size: 2em;
+    }
+  }
+
+  p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+}
+
+.summary {
+  p:nth-child(1) {
+    font-size: 1.2em;
+    font-style: italic;
+
+    @include MQ(L) {
+      font-size: 1.6em;
+    }
+  }
+
+  p:nth-child(2) {
+    text-transform: uppercase;
+    font-family: $tertiary-font;
+    font-size: 1em;
+
+    @include MQ(L) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.main {
+  h3 {
+    font-size: 1.2em;
+
+    @include MQ(L) {
+      font-size: 1.8em;
+    }
+  }
+
+  p {
+    line-height: 2;
+  }
+}
+
+aside {
+  h3 {
+    font-family: $fourth-font;
+    text-transform: none;
+    font-size: 2em;
+    line-height: 0.3;
+
+    @include MQ(L) {
+      font-size: 3em;
+    }
+  }
+}
+
+// other
+
+p {
+  font-size: 1em;
+  line-height: 1.4;
+  color: lighten($color-4, 25%);
+  margin-bottom: 2em;
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  @include MQ(S) {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+}
+
+
+/* -------------------------------- 
+Basic style
+-------------------------------- */
+
+*,
+*::after,
+*::before {
+  @include box-sizing(border-box);
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $primary-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  font-family: $primary-font;
+  font-size: 1.6rem;
+}

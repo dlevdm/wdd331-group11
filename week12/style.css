@@ -1,0 +1,653 @@
+/* -------------------------------- 
+Main & SVGS 
+-------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Lato:wght@400&family=Roboto+Slab&family=Satisfy&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -------------------------------- 
+Prefix Mixins 
+-------------------------------- */
+/* -------------------------------- 
+Layout
+-------------------------------- */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+@media only screen and (min-width: 60em) {
+  .page-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+header {
+  height: 30em;
+  width: 100%;
+  padding: 10em 2em 0;
+}
+@media only screen and (min-width: 30em) {
+  header {
+    padding: 14em 2em 0;
+  }
+}
+@media only screen and (min-width: 60em) {
+  header {
+    padding: 12em 8em 0;
+  }
+}
+@media only screen and (min-width: 60em) {
+  header h1 {
+    width: 5em;
+  }
+}
+
+.summary p:nth-child(2) {
+  position: absolute;
+  top: 18em;
+  padding: 0 3em;
+  margin-bottom: 1em;
+  text-align: right;
+}
+@media only screen and (min-width: 60em) {
+  .summary p:nth-child(2) {
+    top: 25em;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .summary p:nth-child(2) {
+    top: 20em;
+    width: 25em;
+    right: 5%;
+  }
+}
+
+.summary p:nth-child(1) {
+  text-align: center;
+  padding-top: 1em;
+}
+
+@media only screen and (min-width: 60em) {
+  .intro {
+    grid-column: 1/3;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .main {
+    grid-column: 1/2;
+  }
+}
+
+.main div,
+.intro div {
+  padding: 1em;
+}
+@media only screen and (min-width: 60em) {
+  .main div,
+.intro div {
+    padding: 1em 8em;
+  }
+}
+
+.requirements {
+  max-width: 100%;
+}
+@media only screen and (min-width: 60em) {
+  .requirements {
+    position: absolute;
+    margin-top: 2em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .requirements {
+    position: absolute;
+    margin-top: 20em;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .requirements {
+    margin-top: 48em;
+  }
+}
+
+footer {
+  padding: 1em 8em;
+  text-align: center;
+  position: absolute;
+  display: block;
+  margin-top: 110em;
+  width: 100%;
+}
+@media only screen and (min-width: 60em) {
+  footer {
+    margin-top: 56em;
+  }
+}
+@media only screen and (min-width: 75em) {
+  footer {
+    margin-top: 64em;
+  }
+}
+@media only screen and (min-width: 90em) {
+  footer {
+    margin-top: 80em;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.extra1 {
+  position: absolute;
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  top: 1em;
+}
+
+.extra2 {
+  position: absolute;
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  top: 3em;
+}
+
+/* -------------------------------- 
+Colors
+-------------------------------- */
+a,
+a:visited {
+  color: #0D2867;
+}
+
+header {
+  background-color: #260235;
+}
+
+header h1,
+header h2 {
+  color: #FFFFFF;
+}
+
+h3 {
+  color: #0D2867;
+}
+
+.summary p:nth-child(2) {
+  color: #FFFFFF;
+}
+.summary p:nth-child(2) a {
+  color: #FFFFFF;
+}
+.summary p:nth-child(1) {
+  color: #260235;
+}
+
+.requirements,
+.preamble {
+  background-color: #EFEFEF;
+}
+
+aside h3 {
+  color: #D40027;
+}
+
+footer {
+  background-color: #260235;
+}
+footer a {
+  color: #FFFFFF;
+}
+
+.wrapper {
+  border-left: 2px dotted #0D2867;
+}
+.wrapper a {
+  color: #0D2867;
+}
+
+/* -------------------------------- 
+Typography 
+-------------------------------- */
+h1,
+h2 {
+  font-family: "Exo 2", sans-serif;
+  color: #000000;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+}
+@media only screen and (min-width: 20em) {
+  h1 {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 30em) {
+  h1 {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+  font-size: 1em;
+}
+@media only screen and (min-width: 20em) {
+  h2 {
+    font-size: 1.2em;
+    margin: 1em 0 1.4em;
+  }
+}
+
+h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 4em;
+  line-height: 1.2;
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 20em) {
+  h3 {
+    font-size: 3em;
+    margin: 1em 0 1.4em;
+  }
+}
+
+.preamble {
+  text-align: center;
+}
+.preamble h3 {
+  text-align: center;
+  font-size: 1.4em;
+}
+@media only screen and (min-width: 60em) {
+  .preamble h3 {
+    font-size: 2em;
+  }
+}
+.preamble p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.summary p:nth-child(1) {
+  font-size: 1.2em;
+  font-style: italic;
+}
+@media only screen and (min-width: 60em) {
+  .summary p:nth-child(1) {
+    font-size: 1.6em;
+  }
+}
+.summary p:nth-child(2) {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+}
+@media only screen and (min-width: 60em) {
+  .summary p:nth-child(2) {
+    font-size: 1.4rem;
+  }
+}
+
+.main h3 {
+  font-size: 1.2em;
+}
+@media only screen and (min-width: 60em) {
+  .main h3 {
+    font-size: 1.8em;
+  }
+}
+.main p {
+  line-height: 2;
+}
+
+aside h3 {
+  font-family: "Satisfy", cursive;
+  text-transform: none;
+  font-size: 2em;
+  line-height: 0.3;
+}
+@media only screen and (min-width: 60em) {
+  aside h3 {
+    font-size: 3em;
+  }
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4;
+  color: #404040;
+  margin-bottom: 2em;
+}
+p a {
+  text-decoration: underline;
+}
+p a:hover {
+  text-decoration: none;
+}
+@media only screen and (min-width: 20em) {
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+}
+
+/* -------------------------------- 
+Basic style
+-------------------------------- */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto Slab", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6rem;
+}
+
+/* -------------------------------- 
+Navigation 
+-------------------------------- */
+.wrapper {
+  text-align: center;
+  padding: 1em;
+}
+
+.design-selection ul {
+  display: grid;
+  grid-template-rows: repeat(8, minmax(5vh, 1fr));
+}
+
+.design-selection ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.design-selection li:nth-child(1)::before {
+  content: "";
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://www.iau.org/static/archives/images/screen/iau1407a.jpg);
+}
+
+.design-selection li:nth-child(2)::before {
+  content: "";
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://solarviews.com/raw/venus/venmap2.gif);
+}
+
+.design-selection li:nth-child(3)::before {
+  content: "";
+  width: 4.5em;
+  height: 4.5em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://m.media-amazon.com/images/I/817ST7RkzLL._AC_SX355_.jpg);
+}
+
+.design-selection li:nth-child(4)::before {
+  content: "";
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://i.redd.it/cx34ojcht4301.jpg);
+}
+
+.design-selection li:nth-child(5)::before {
+  content: "";
+  width: 8em;
+  height: 8em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg);
+}
+
+.design-selection li:nth-child(6)::before {
+  content: "";
+  width: 7em;
+  height: 7em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://www.solarsystemscope.com/textures/download/8k_saturn.jpg);
+}
+
+.design-selection li:nth-child(7)::before {
+  content: "";
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1912b050-3675-4394-a3d1-d0b4cb43ae0a/dc3ui75-a7f251a1-1479-4356-a42d-b90b7b6e4042.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMTkxMmIwNTAtMzY3NS00Mzk0LWEzZDEtZDBiNGNiNDNhZTBhXC9kYzN1aTc1LWE3ZjI1MWExLTE0NzktNDM1Ni1hNDJkLWI5MGI3YjZlNDA0Mi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.w1VBLCjSLLkwDwWey9t1urMbU3OnIC7ZnAfjyKDnHMA);
+}
+
+.design-selection li:nth-child(8)::before {
+  content: "";
+  width: 3.5em;
+  height: 3.5em;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  margin-bottom: 1em;
+  transform: rotate(-15deg);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
+}
+
+.design-selection li:hover::before {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    background-position: 100%;
+  }
+}
+.design-selection li a:nth-child(1) {
+  flex: 1 0 100%;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+.design-selection li a:nth-child(2) {
+  margin-left: 0.5em;
+}
+
+header {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctNzMnIGs0PScuMDEnIC8+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDMwMzFhJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmZmZmZmJyBmaWx0ZXI9J3VybCgjbiknIG9wYWNpdHk9JzEnLz4KPHJlY3QgeD0nLTElJyB5PSctMSUnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnIGZpbGw9JyMwMzAzMWEnIGZpbHRlcj0ndXJsKCNpKScgb3BhY2l0eT0nMScvPgo8L3N2Zz4=");
+}
+
+header:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30em;
+  display: inline-block;
+  background: -moz-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#002f4b", endColorstr="#00000000", GradientType=0);
+  /* IE6-9 */
+}
+
+.extra1 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 10px #FFFFFF, 0 0 50px 30px #ff00ff, 0 0 70px 40px #00ffff;
+  /* outer cyan */
+  animation: animStar 10s ease-out 10s 20;
+}
+
+.extra2 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 10px #FFFFFF, 0 0 50px 30px #ff00ff, 0 0 70px 40px #00ffff;
+  /* outer cyan */
+  animation: animStar 20s ease-out 20s 20 alternate-reverse;
+}
+
+@keyframes animStar {
+  30% {
+    transform: translateX(100vw) translateY(20em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100vw) translateY(20em);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
