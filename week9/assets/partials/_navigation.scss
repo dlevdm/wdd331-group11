@@ -4,14 +4,12 @@ Navigation
 @mixin planets($width: 5em, $height: 5em) {
   content: "";
   width: $width;
-  height: $height;
-  overflow: hidden;
+  height: $height;  
   border-radius: 50%;
   box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
   margin-bottom: 1em;
   transform: rotate(-15deg);
   background-size: cover;
-  background-repeat: repeat-x;
 }
 
 .wrapper {
@@ -73,7 +71,7 @@ Navigation
 }
 
 .design-selection li:hover::before {
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {

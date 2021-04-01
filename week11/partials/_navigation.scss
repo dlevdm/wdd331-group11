@@ -14,6 +14,10 @@ Navigation
   background-repeat: repeat-x;
 }
 
+@mixin anim($time: 100s) {
+  animation: spin $time ease infinite alternate;
+}
+
 .wrapper {
   text-align: center;
   padding: 1em;
@@ -21,21 +25,37 @@ Navigation
 
 .design-selection ul {
   display: grid;
+  gap: 1.2em;
+  justify-items: center;
   grid-template-rows: repeat(8, minmax(5vh, 1fr));
 }
 
 .design-selection ul li {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
   justify-content: center;
-  padding: 1em;
   font-style: italic;
   font-size: 0.7em;
 }
 
+.design-selection ul li a {
+  height: 35px;
+}
+
+.design-selection li a:nth-child(1) {
+  flex: 1 0 100%;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+.design-selection li a:nth-child(2) {
+  margin-left: 0.5em;
+}
+
 .design-selection li:nth-child(1)::before {
   @include planets(3em, 3em);
-  background-image: url(https://www.iau.org/static/archives/images/screen/iau1407a.jpg);
+  background-image: url(svgs/planet.svg);
 }
 
 .design-selection li:nth-child(2)::before {
@@ -43,9 +63,18 @@ Navigation
   background-image: url(https://solarviews.com/raw/venus/venmap2.gif);
 }
 
-.design-selection li:nth-child(3)::before {
-  @include planets(4.5em, 4.5em);
-  background-image: url(https://m.media-amazon.com/images/I/817ST7RkzLL._AC_SX355_.jpg);
+.design-selection li {
+  &:nth-child(3)::before {
+    @include planets(4.5em, 4.5em);
+    background-image: url(svgs/earth.svg);
+    box-shadow: -8px -5px 8px 1px rgb(0 0 0 / 90%) inset,
+      -1px 0px 15px -7px #f0df1759;
+    transition: all 1s;
+  }
+  &:hover:nth-child(3)::before {
+    --position: 1000%;
+    @include anim(20s);
+  }
 }
 
 .design-selection li:nth-child(4)::before {
@@ -53,14 +82,30 @@ Navigation
   background-image: url(https://i.redd.it/cx34ojcht4301.jpg);
 }
 
-.design-selection li:nth-child(5)::before {
-  @include planets(8em, 8em);
-  background-image: url(https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg);
+.design-selection li {
+  &:nth-child(5)::before {
+    @include planets(8em, 8em);
+    background-image: url(svgs/saturn.svg);
+    transition: all 2s;
+  }
+  &:hover:nth-child(5)::before {
+    --position: 100000%;
+    @include anim(10s);
+  } 
 }
 
-.design-selection li:nth-child(6)::before {
-  @include planets(7em, 7em);
-  background-image: url(https://www.solarsystemscope.com/textures/download/8k_saturn.jpg);
+.design-selection li {
+  &:nth-child(6)::before {
+    @include planets(7em, 7em);
+    background-image: url(svgs/jupiter.svg);
+    transition: all 1s;
+  }
+  &:hover:nth-child(6)::before {
+    --position: -100000%;
+    @include anim(10s);
+
+
+  }
 }
 
 .design-selection li:nth-child(7)::before {
@@ -73,22 +118,12 @@ Navigation
   background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
 }
 
-.design-selection li:hover::before {
-  animation: spin 4s linear infinite;
+.design-selection li:hover:before {
+  transform: scale(1.05) rotate(-15deg);
 }
 
 @keyframes spin {
   100% {
-    background-position: 100%;
+    background-position-x: var(--position);
   }
-}
-
-.design-selection li a:nth-child(1) {
-  flex: 1 0 100%;
-  font-style: normal;
-  font-size: 1.6rem;
-}
-
-.design-selection li a:nth-child(2) {
-  margin-left: 0.5em;
 }

@@ -448,16 +448,32 @@ Navigation
 
 .design-selection ul {
   display: grid;
+  gap: 1.2em;
+  justify-items: center;
   grid-template-rows: repeat(8, minmax(5vh, 1fr));
 }
 
 .design-selection ul li {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
   justify-content: center;
-  padding: 1em;
   font-style: italic;
   font-size: 0.7em;
+}
+
+.design-selection ul li a {
+  height: 35px;
+}
+
+.design-selection li a:nth-child(1) {
+  flex: 1 0 100%;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+
+.design-selection li a:nth-child(2) {
+  margin-left: 0.5em;
 }
 
 .design-selection li:nth-child(1)::before {
@@ -471,7 +487,7 @@ Navigation
   transform: rotate(-15deg);
   background-size: cover;
   background-repeat: repeat-x;
-  background-image: url(https://www.iau.org/static/archives/images/screen/iau1407a.jpg);
+  background-image: url(svgs/planet.svg);
 }
 
 .design-selection li:nth-child(2)::before {
@@ -499,7 +515,13 @@ Navigation
   transform: rotate(-15deg);
   background-size: cover;
   background-repeat: repeat-x;
-  background-image: url(https://m.media-amazon.com/images/I/817ST7RkzLL._AC_SX355_.jpg);
+  background-image: url(svgs/earth.svg);
+  box-shadow: -8px -5px 8px 1px rgba(0, 0, 0, 0.9) inset, -1px 0px 15px -7px #f0df1759;
+  transition: all 1s;
+}
+.design-selection li:hover:nth-child(3)::before {
+  --position: 1000%;
+  animation: spin 20s ease infinite alternate;
 }
 
 .design-selection li:nth-child(4)::before {
@@ -527,7 +549,12 @@ Navigation
   transform: rotate(-15deg);
   background-size: cover;
   background-repeat: repeat-x;
-  background-image: url(https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg);
+  background-image: url(svgs/saturn.svg);
+  transition: all 2s;
+}
+.design-selection li:hover:nth-child(5)::before {
+  --position: 100000%;
+  animation: spin 10s ease infinite alternate;
 }
 
 .design-selection li:nth-child(6)::before {
@@ -541,7 +568,12 @@ Navigation
   transform: rotate(-15deg);
   background-size: cover;
   background-repeat: repeat-x;
-  background-image: url(https://www.solarsystemscope.com/textures/download/8k_saturn.jpg);
+  background-image: url(svgs/jupiter.svg);
+  transition: all 1s;
+}
+.design-selection li:hover:nth-child(6)::before {
+  --position: -100000%;
+  animation: spin 10s ease infinite alternate;
 }
 
 .design-selection li:nth-child(7)::before {
@@ -572,25 +604,15 @@ Navigation
   background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
 }
 
-.design-selection li:hover::before {
-  animation: spin 4s linear infinite;
+.design-selection li:hover:before {
+  transform: scale(1.05) rotate(-15deg);
 }
 
 @keyframes spin {
   100% {
-    background-position: 100%;
+    background-position-x: var(--position);
   }
 }
-.design-selection li a:nth-child(1) {
-  flex: 1 0 100%;
-  font-style: normal;
-  font-size: 1.6rem;
-}
-
-.design-selection li a:nth-child(2) {
-  margin-left: 0.5em;
-}
-
 header {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctNzMnIGs0PScuMDEnIC8+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDMwMzFhJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmZmZmZmJyBmaWx0ZXI9J3VybCgjbiknIG9wYWNpdHk9JzEnLz4KPHJlY3QgeD0nLTElJyB5PSctMSUnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnIGZpbGw9JyMwMzAzMWEnIGZpbHRlcj0ndXJsKCNpKScgb3BhY2l0eT0nMScvPgo8L3N2Zz4=");
 }
