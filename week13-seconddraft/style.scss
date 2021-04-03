@@ -1,13 +1,13 @@
 /* -------------------------------- 
 Main & SVGS 
 -------------------------------- */
-@import 'partials/reset';
-@import 'partials/prefix-mixins';
-@import 'partials/layout'; // responsive grid and media queries
-@import 'partials/colors';
-@import 'partials/typography';
-@import 'partials/navigation';
-@import 'partials/rocket';
+@import 'partials/reset',
+ 'partials/prefix-mixins',
+ 'partials/layout', // responsive grid and media queries
+ 'partials/colors',
+ 'partials/typography',
+ 'partials/navigation',
+ 'partials/rocket';
 
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Lato:wght@400&family=Roboto+Slab&family=Satisfy&display=swap');
 // fonts
@@ -40,7 +40,6 @@ header:after {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002f4b', endColorstr='#00000000', GradientType=0);
     /* IE6-9 */
 }
-
 .extra1 {
     width: 8px;
     height: 8px;
