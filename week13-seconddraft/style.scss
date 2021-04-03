@@ -62,11 +62,11 @@ header:after {
     border-radius: 50%;
     background-color: $color-6;
     box-shadow:
-    0 0 30px 10px $color-6,
-    /* inner white */
-    0 0 50px 30px $stars-2,
-    /* middle magenta */
-    0 0 70px 40px $stars-1;
+        0 0 30px 10px $color-6,
+        /* inner white */
+        0 0 50px 30px $stars-2,
+        /* middle magenta */
+        0 0 70px 40px $stars-1;
     /* outer cyan */
     animation: animStar 20s ease-out 20s 20 alternate-reverse;
 }
@@ -90,21 +90,26 @@ header:after {
     height: 30em;
     margin-top: -18em;
     margin-left: 20%;
+
     @include MQ(M) {
-    margin-left: 40%;
+        margin-left: 40%;
     }
+
     @include MQ(L) {
-    margin-left: 30%;
+        margin-left: 30%;
     }
+
     @include MQ(Lb) {
-    margin-left: 0%;
+        margin-left: 0%;
+
         &:hover {
             transform: translateX(30vw);
-            }
-            &:hover::before {
-                content: '6 FEET AWAY, PLEASE';
-                color: $color-3;
-            }
+        }
+
+        &:hover::before {
+            content: '6 FEET AWAY, PLEASE';
+            color: $color-3;
+        }
     }
 }
 

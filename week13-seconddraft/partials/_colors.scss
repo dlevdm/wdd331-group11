@@ -46,9 +46,17 @@ h3 {
     }
 }
 
-.requirements,
+.requirements {
+    background-color: $color-5;
+}
+
 .preamble {
     background-color: $color-5;
+
+    h3 {
+        color: $color-6;
+        text-shadow: 2px 2px 30px $color-2;
+    }
 }
 
 aside {
@@ -66,7 +74,9 @@ footer {
 }
 
 .wrapper {
-    box-shadow: -10px 0px 10px -3px rgba(210,206,206,0.86);
+    @include MQ(L) {
+        box-shadow: -10px 0px 10px -3px rgba(210, 206, 206, 0.86);
+    }
 
     a {
         color: $color-2;

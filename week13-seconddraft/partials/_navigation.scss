@@ -30,6 +30,7 @@ Navigation
   gap: 1.2em;
   justify-items: center;
   grid-template-rows: repeat(8, minmax(5vh, auto));
+
   li {
     display: flex;
     flex-wrap: wrap;
@@ -37,13 +38,16 @@ Navigation
     justify-content: center;
     font-style: italic;
     font-size: 0.7em;
+
     a {
       height: 35px;
+
       &:nth-child(1) {
         flex: 1 0 100%;
         font-style: normal;
         font-size: 1.6rem;
       }
+
       &:nth-child(2) {
         margin-left: 0.5em;
       }
@@ -57,6 +61,7 @@ Navigation
     @include planets(5em, 5em);
     background-image: url(images/1mercury.svg);
   }
+
   &:hover:nth-child(1)::before {
     --position: 1000%;
     @include anim(35s);
@@ -68,6 +73,7 @@ Navigation
     @include planets(5em, 5em);
     background-image: url(images/2venus.svg);
   }
+
   &:hover:nth-child(2)::before {
     --position: 1000%;
     @include anim(20s);
@@ -79,6 +85,7 @@ Navigation
     @include planets(6em, 6em);
     background-image: url(images/3earth.svg);
   }
+
   &:hover:nth-child(3)::before {
     --position: 1000%;
     @include anim(20s);
@@ -90,6 +97,7 @@ Navigation
     @include planets(4em, 4em);
     background-image: url(images/4mars.svg);
   }
+
   &:hover:nth-child(4)::before {
     --position: 1000%;
     @include anim(20s);
@@ -101,6 +109,7 @@ Navigation
     @include planets(8em, 8em);
     background-image: url(images/5jupiter.svg);
   }
+
   &:hover:nth-child(5)::before {
     --position: 1000%;
     @include anim(30s);
@@ -111,14 +120,17 @@ Navigation
   &:nth-child(6) {
     position: relative;
   }
+
   &:nth-child(6)::before {
     @include planets(7.2em, 7.2em);
     background-image: url(images/6saturn.svg);
   }
+
   &:hover:nth-child(6)::before {
     --position: 1000%;
     @include anim(30s);
   }
+
   &:nth-child(6)::after {
     content: "";
     position: absolute;
@@ -138,6 +150,7 @@ Navigation
     @include planets(7em, 7em);
     background-image: url(images/7uranus.svg);
   }
+
   &:hover:nth-child(7)::before {
     --position: 1000%;
     @include anim(30s);
@@ -149,6 +162,7 @@ Navigation
     @include planets(4em, 4em);
     background-image: url(images/8neptune.svg);
   }
+
   &:hover:nth-child(8)::before {
     --position: 1000%;
     @include anim(40s);
