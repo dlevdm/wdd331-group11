@@ -46,16 +46,13 @@ h3 {
     }
 }
 
+.preamble,
 .requirements {
-    background-color: $color-5;
-}
-
-.preamble {
     background-color: $color-5;
 
     h3 {
-        color: $color-6;
-        text-shadow: 2px 2px 30px $color-2;
+        color: $color-1;
+        text-shadow: 2px 2px 50px $stars-1;
     }
 }
 

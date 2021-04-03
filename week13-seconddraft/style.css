@@ -328,16 +328,14 @@ h3 {
   color: #260235;
 }
 
+.preamble,
 .requirements {
   background-color: #EFEFEF;
 }
-
-.preamble {
-  background-color: #EFEFEF;
-}
-.preamble h3 {
-  color: #FFFFFF;
-  text-shadow: 2px 2px 30px #0D2867;
+.preamble h3,
+.requirements h3 {
+  color: #260235;
+  text-shadow: 2px 2px 50px #00ffff;
 }
 
 aside h3 {
