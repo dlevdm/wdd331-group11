@@ -7,14 +7,16 @@ Navigation
   height: $height;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: -1px -1px 1px 1px #000 inset, 0 0 5px 2px #000;
+  box-shadow: -8px -5px 8px 1px rgb(0 0 0 / 90%) inset,
+    -1px 0px 15px -7px #f0df1759;
   margin-bottom: 1em;
   transform: rotate(-15deg);
   background-size: cover;
   background-repeat: repeat-x;
+  transition: all 1s;
 }
 
-@mixin anim($time: 100s) {
+@mixin anim($time) {
   animation: spin $time ease infinite alternate;
 }
 
@@ -27,49 +29,55 @@ Navigation
   display: grid;
   gap: 1.2em;
   justify-items: center;
-  grid-template-rows: repeat(8, minmax(5vh, 1fr));
+  grid-template-rows: repeat(8, minmax(5vh, auto));
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    font-style: italic;
+    font-size: 0.7em;
+    a {
+      height: 35px;
+      &:nth-child(1) {
+        flex: 1 0 100%;
+        font-style: normal;
+        font-size: 1.6rem;
+      }
+      &:nth-child(2) {
+        margin-left: 0.5em;
+      }
+    }
+  }
 }
 
-.design-selection ul li {
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  justify-content: center;
-  font-style: italic;
-  font-size: 0.7em;
+/* ----------------- SVG planets ----------------- */
+.design-selection li {
+  &:nth-child(1)::before {
+    @include planets(5em, 5em);
+    background-image: url(svgs/1mercury.svg);
+  }
+  &:hover:nth-child(1)::before {
+    --position: 1000%;
+    @include anim(35s);
+  }
 }
 
-.design-selection ul li a {
-  height: 35px;
-}
-
-.design-selection li a:nth-child(1) {
-  flex: 1 0 100%;
-  font-style: normal;
-  font-size: 1.6rem;
-}
-
-.design-selection li a:nth-child(2) {
-  margin-left: 0.5em;
-}
-
-.design-selection li:nth-child(1)::before {
-  @include planets(3em, 3em);
-  background-image: url(svgs/planet.svg);
-}
-
-.design-selection li:nth-child(2)::before {
-  @include planets(4em, 4em);
-  background-image: url(https://solarviews.com/raw/venus/venmap2.gif);
+.design-selection li {
+  &:nth-child(2)::before {
+    @include planets(5em, 5em);
+    background-image: url(svgs/2venus.svg);
+  }
+  &:hover:nth-child(2)::before {
+    --position: 1000%;
+    @include anim(20s);
+  }
 }
 
 .design-selection li {
   &:nth-child(3)::before {
-    @include planets(4.5em, 4.5em);
-    background-image: url(svgs/earth.svg);
-    box-shadow: -8px -5px 8px 1px rgb(0 0 0 / 90%) inset,
-      -1px 0px 15px -7px #f0df1759;
-    transition: all 1s;
+    @include planets(6em, 6em);
+    background-image: url(svgs/3earth.svg);
   }
   &:hover:nth-child(3)::before {
     --position: 1000%;
@@ -77,45 +85,75 @@ Navigation
   }
 }
 
-.design-selection li:nth-child(4)::before {
-  @include planets(3em, 3em);
-  background-image: url(https://i.redd.it/cx34ojcht4301.jpg);
+.design-selection li {
+  &:nth-child(4)::before {
+    @include planets(4em, 4em);
+    background-image: url(svgs/4mars.svg);
+  }
+  &:hover:nth-child(4)::before {
+    --position: 1000%;
+    @include anim(20s);
+  }
 }
 
 .design-selection li {
   &:nth-child(5)::before {
     @include planets(8em, 8em);
-    background-image: url(svgs/saturn.svg);
-    transition: all 2s;
+    background-image: url(svgs/5jupiter.svg);
   }
   &:hover:nth-child(5)::before {
-    --position: 100000%;
-    @include anim(10s);
-  } 
+    --position: 1000%;
+    @include anim(30s);
+  }
 }
 
 .design-selection li {
+  &:nth-child(6) {
+    position: relative;
+  }
   &:nth-child(6)::before {
-    @include planets(7em, 7em);
-    background-image: url(svgs/jupiter.svg);
-    transition: all 1s;
+    @include planets(7.2em, 7.2em);
+    background-image: url(svgs/6saturn.svg);
   }
   &:hover:nth-child(6)::before {
-    --position: -100000%;
-    @include anim(10s);
-
-
+    --position: 1000%;
+    @include anim(30s);
+  }
+  &:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: auto;
+    width: 17em;
+    height: 14em;
+    background-image: url(svgs/rings.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
   }
 }
 
-.design-selection li:nth-child(7)::before {
-  @include planets(4em, 4em);
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1912b050-3675-4394-a3d1-d0b4cb43ae0a/dc3ui75-a7f251a1-1479-4356-a42d-b90b7b6e4042.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMTkxMmIwNTAtMzY3NS00Mzk0LWEzZDEtZDBiNGNiNDNhZTBhXC9kYzN1aTc1LWE3ZjI1MWExLTE0NzktNDM1Ni1hNDJkLWI5MGI3YjZlNDA0Mi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.w1VBLCjSLLkwDwWey9t1urMbU3OnIC7ZnAfjyKDnHMA);
+.design-selection li {
+  &:nth-child(7)::before {
+    @include planets(7em, 7em);
+    background-image: url(svgs/7uranus.svg);
+  }
+  &:hover:nth-child(7)::before {
+    --position: 1000%;
+    @include anim(30s);
+  }
 }
 
-.design-selection li:nth-child(8)::before {
-  @include planets(3.5em, 3.5em);
-  background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
+.design-selection li {
+  &:nth-child(8)::before {
+    @include planets(4em, 4em);
+    background-image: url(https://www.solarsystemscope.com/textures/download/2k_neptune.jpg);
+    transition: all 1s;
+  }
+  &:hover:nth-child(8)::before {
+    --position: 10000%;
+    @include anim(40s);
+  }
 }
 
 .design-selection li:hover:before {
