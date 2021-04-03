@@ -1,0 +1,190 @@
+/* -------------------------------- 
+Layout
+-------------------------------- */
+// breakpoints
+$S: 20em;
+$M: 30em;
+$L: 60em;
+$XL: 90em;
+
+$Lb: 75em;
+
+// other variables
+$mainpadding: 1em 8em;
+$smlpadding: 1em;
+
+// media queries
+@mixin MQ($canvas) {
+  @if $canvas==S {
+    @media only screen and (min-width: $S) {
+      @content;
+    }
+  }
+
+  @else if $canvas==M {
+    @media only screen and (min-width: $M) {
+      @content;
+    }
+  }
+
+  @else if $canvas==L {
+    @media only screen and (min-width: $L) {
+      @content;
+    }
+  }
+
+  @else if $canvas==XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  }
+
+  @else if $canvas==Lb {
+    @media only screen and (min-width: $Lb) {
+      @content;
+    }
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+
+  @include MQ(L) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+header {
+  height: 30em;
+  width: 100%;
+  padding: 10em 2em 0;
+
+  @include MQ(M) {
+    padding: 14em 2em 0;
+  }
+
+  @include MQ(L) {
+    padding: 12em 8em 0;
+  }
+
+  h1 {
+    @include MQ(L) {
+      width: 5em;
+    }
+  }
+}
+
+.summary p:nth-child(2) {
+  position: absolute;
+  top: 18em;
+  padding: 0 3em;
+  margin-bottom: 1em;
+  text-align: right;
+
+  @include MQ(L) {
+    top: 25em;
+  }
+
+  @include MQ(M) {
+    top: 20em;
+    width: 25em;
+    right: 5%;
+  }
+}
+
+.summary p:nth-child(1) {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.intro {
+  @include MQ(L) {
+    grid-column: 1 / 3;
+  }
+}
+
+.main {
+  @include MQ(L) {
+    grid-column: 1 / 2;
+  }
+}
+
+.main div,
+.intro div {
+  padding: $smlpadding;
+
+  @include MQ(L) {
+    padding: $mainpadding;
+  }
+}
+
+.requirements {
+  max-width: 100%;
+
+  @include MQ(L) {
+    position: absolute;
+    margin-top: 2em;
+  }
+
+  @include MQ(Lb) {
+    position: absolute;
+    margin-top: 20em;
+  }
+
+  @include MQ(XL) {
+    margin-top: 48em;
+  }
+}
+
+footer {
+  padding: $mainpadding;
+  text-align: center;
+  position: absolute;
+  display: block;
+  margin-top: 110em;
+  width: 100%;
+
+  @include MQ(L) {
+    margin-top: 56em;
+  }
+
+  @include MQ(Lb) {
+    margin-top: 64em;
+  }
+
+  @include MQ(XL) {
+    margin-top: 80em;
+  }
+}
+
+
+// other
+img {
+  max-width: 100%;
+}
+
+.extra1 {
+  position: absolute;
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  top: 1em;
+}
+
+.extra2 {
+  position: absolute;
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+  overflow: hidden;
+  top: 3em;
+}
