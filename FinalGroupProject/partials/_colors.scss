@@ -1,0 +1,81 @@
+/* -------------------------------- 
+Colors
+-------------------------------- */
+$color-1: #260235; // violet
+$color-2: #0D2867; // royal blue
+$color-3: #D40027; // Fire engine Red
+$color-4: #000000; // black
+$color-5: #EFEFEF; // grey
+$color-6: #FFFFFF; // white
+
+
+// additional colors
+
+$stars-1: #00ffff; // cyan
+$stars-2: #ff00ff; // magenta
+
+a,
+a:visited {
+    color: $color-2;
+}
+
+header {
+    background-color: $color-1;
+}
+
+header h1,
+header h2 {
+    color: $color-6;
+}
+
+h3 {
+    color: $color-2;
+}
+
+.summary {
+    p:nth-child(2) {
+        color: $color-6;
+
+        a {
+            color: $color-6;
+        }
+    }
+
+    p:nth-child(1) {
+        color: $color-1;
+    }
+}
+
+.preamble,
+.requirements {
+    background-color: $color-5;
+
+    h3 {
+        color: $color-1;
+        text-shadow: 2px 2px 50px $stars-1;
+    }
+}
+
+aside {
+    h3 {
+        color: $color-3;
+    }
+}
+
+footer {
+    background-color: $color-1;
+
+    a {
+        color: $color-6;
+    }
+}
+
+.wrapper {
+    @include MQ(L) {
+        box-shadow: -10px 0px 10px -3px rgba(210, 206, 206, 0.86);
+    }
+
+    a {
+        color: $color-2;
+    }
+}
